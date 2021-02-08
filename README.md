@@ -69,7 +69,7 @@ Epoch 60/60
 Epoch 00060: saving model to FCN2s.h5
 
 ```
-The result is saved as `FCN[n]s.h5` in the root folder, where `n = FCN_TYPE` 
+The model is saved as `FCN[n]s.h5` in the root folder, where `n = FCN_TYPE` 
 
 ## Evaluate your own model
 ## Setup configuration

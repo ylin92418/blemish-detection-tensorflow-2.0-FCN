@@ -58,6 +58,8 @@ In this example, I put a demo image in `./dataset/FCN_500_imageset`, and the cor
 _CFG.TRAIN.DATASET            = ['./dataset/FCN_500_imageset']
 _CFG.TRAIN.LABELSET           = ['./dataset/FCN_500_refine_txt']
 ```
+Please refer to `./dataset` for details on how to setup your own dataset
+
 #### Start your own training set
 simply input below comment in the directory
 ```bash

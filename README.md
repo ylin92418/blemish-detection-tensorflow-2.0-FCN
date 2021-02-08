@@ -24,7 +24,7 @@ $ pip3 install -r ./packages/requirements.txt
 ├── train.py
 └── validation.py
 ```
-
+## Training
 ### Setup configuration
 Specify your own data set and training paramenter in ```config.py```
 
@@ -72,7 +72,7 @@ Epoch 00060: saving model to FCN2s.h5
 The model is saved as `FCN[n]s.h5` in the root folder, where `n = FCN_TYPE` 
 
 ## Evaluate your own model
-## Setup configuration
+### Setup configuration
 Specify your own data set and training paramenter in ```config.py```
 ```python3
 _CFG.EVAL.USE_CPU             = True          # if you want to evaluate result in the middle of training process, set this parameter as True.

@@ -73,3 +73,4 @@ _CFG.EVAL.N_CLASSES           = 2
 _CFG.EVAL.THRESHOLD           = 0.5
 _CFG.EVAL.MAX_BATCH_SIZE      = 2
 ```
+evaluation result will be saved in ```./validation_result```

@@ -73,4 +73,9 @@ _CFG.EVAL.N_CLASSES           = 2
 _CFG.EVAL.THRESHOLD           = 0.5
 _CFG.EVAL.MAX_BATCH_SIZE      = 2
 ```
+### Evaluate the model
+input the comment as follows
+```bash
+$ python3 validation.py
+```
 evaluation result will be saved in ```./validation_result```

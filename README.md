@@ -45,7 +45,7 @@ _CFG.TRAIN.DATASET            = ['./dataset/FCN_500_imageset', './dataset/FCN_im
 _CFG.TRAIN.LABELSET           = ['./dataset/FCN_500_refine_txt', './dataset/FCN_refine_txt'] 
 ```
 Notice: 
-  * ```DATASET``` and ```LABELSET``` support list of input images, keep labeset be the same order as dataset
+  * ```DATASET``` and ```LABELSET``` support list of input images
   * labels are 2D array recorded in text files, each class is denoted as corresponding value
 
 ### Train your model

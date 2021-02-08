@@ -1,4 +1,4 @@
-# Tensorflow-2.0-FCN-
+# Tensorflow-2.0-FCN
 ## Installation
 Install packages from requirements.txt
 ```pip3
@@ -25,7 +25,7 @@ $ pip3 install -r ./packages/requirements.txt
 └── validation.py
 ```
 
-### setup configuration
+### Setup configuration
 Specify your own data set and training paramenter in ```config.py```
 
 ```python3

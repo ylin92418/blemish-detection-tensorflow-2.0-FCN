@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jan 20 10:02:10 2021
+Created on Oct 19 2020
 
-@author: A85K
+@author: Y. Lin
 """
 
 from keras.applications import vgg16

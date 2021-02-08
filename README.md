@@ -42,7 +42,17 @@ Notice:
   * ```DATASET``` and ```LABELSET``` support list of input images, keep labeset be the same order as dataset
   * labels are 2D array recorded in text files, each class is denoted as corresponding value
 
-### Train your own dataset
+### Train your model
+#### Dataset
+Dataset can be stored in wherever you want, the py supports multiple paths input, which means you are allowed to input multiple dataset stored in different path.
+Just to be careful that all data and label have to be set as the same order.
+In this example, I put a demo image in `./dataset/FCN_500_imageset`, and the corresponding label is stored in `./dataset/FCN_500_refine_txt`
+So in this case, config file should be set as:
+```python3
+_CFG.TRAIN.DATASET            = ['./dataset/FCN_500_imageset']
+_CFG.TRAIN.LABELSET           = ['./dataset/FCN_500_refine_txt']
+```
+#### Start your own training set
 simply input below comment in the directory
 ```bash
 $ python3 train.py
@@ -59,6 +69,7 @@ Epoch 60/60
 Epoch 00060: saving model to FCN2s.h5
 
 ```
+The result is saved as `FCN[n]s.h5` in the root folder, where `n = FCN_TYPE` 
 
 ## Evaluate your own model
 ## Setup configuration

@@ -1,5 +1,5 @@
 # Tensorflow-2.0-FCN
-This reporsoitory contains an example of FCN implementation based on Tensorflow 2.X
+This repository contains an example of FCN implementation based on Tensorflow 2.X
 
 
 Below is an example of a dust-screening result based on FCN2s

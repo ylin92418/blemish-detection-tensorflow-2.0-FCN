@@ -96,7 +96,7 @@ _CFG.EVAL.MAX_BATCH_SIZE      = 2             # in validation.py, an input image
                                               # can be up to 20
 ```
 ### Evaluate the model
-input the comment as follows
+Put your data in `./validation_data` and evaluate the result by typing the comment as follows
 ```bash
 $ python3 validation.py
 ```

@@ -50,7 +50,8 @@ Notice:
 
 ### Train your model
 #### Dataset
-Dataset can be stored in wherever you want, the py supports multiple paths input, which means you are allowed to input multiple dataset stored in different path.
+Dataset can be stored in wherever you want, the py supports multiple paths input, which means you are allowed to input multiple dataset stored in different paths.
+
 Just to be careful that all data and label have to be set as the same order.
 In this example, I put a demo image in `./dataset/FCN_500_imageset`, and the corresponding label is stored in `./dataset/FCN_500_refine_txt`
 So in this case, config file should be set as:

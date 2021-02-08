@@ -1,4 +1,8 @@
 # Tensorflow-2.0-FCN
+This reporsoitory contains an example of FCN implementation based on Tensorflow 2.X
+Below is an example of a dust-screening result based on FCN2s
+![image](https://github.com/ylin1992/Tensorflow-2.0-FCN/blob/main/validation_result/tst_result.png)
+
 ## Installation
 Install packages from requirements.txt
 ```pip3
@@ -76,13 +80,16 @@ The model is saved as `FCN[n]s.h5` in the root folder, where `n = FCN_TYPE`
 Specify your own data set and training paramenter in ```config.py```
 ```python3
 _CFG.EVAL.USE_CPU             = True          # if you want to evaluate result in the middle of training process, set this parameter as True.
-                                            # otherwise, set this value as False to use GPU instead
+                                              # otherwise, set this value as False to use GPU instead
 _CFG.EVAL.INPUT_SIZE          = 320
 _CFG.EVAL.FIRST_LAYER_SIZE    = 320
 _CFG.EVAL.FCN_TYPE            = 2             # FCN_TYPE has to be set as 2, 4, or 8 and should be the same as configuration for training
 _CFG.EVAL.N_CLASSES           = 2 
 _CFG.EVAL.THRESHOLD           = 0.5
-_CFG.EVAL.MAX_BATCH_SIZE      = 2
+_CFG.EVAL.MAX_BATCH_SIZE      = 2             # in validation.py, an input image is segmantized into small fragments and zipped into batch
+                                              # adjust this parameter based on your GPU RAM
+                                              # i.e., I used GTX1660 Ti, 6GB GRAM, FCN2s with first layer = (224,224,3), this parameter
+                                              # can be up to 20
 ```
 ### Evaluate the model
 input the comment as follows

@@ -16,8 +16,8 @@ $ pip3 install -r ./packages/requirements.txt
 ```bash
 .
 ├── dataset
-│   ├── FCN_500_imageset                # raw images of dataset, it's ok to rename the folder as you wish, remember to modify data path in config.py
-│   └── FCN_500_refine_txx              # 2-D txt labels, it's ok to rename the folder name as you wish, remember to modify data path in config.py
+│   ├── FCN_500_imageset                # raw images of dataset, it's ok to rename the folder as you wish, remember to modify the data path in config.py
+│   └── FCN_500_refine_txx              # 2-D txt labels, it's ok to rename the folder as you wish, remember to modify the data path in config.py
 ├── validation_data                     # input images for evaluation
 ├── validation_result                   # evaluation result
 ├── log

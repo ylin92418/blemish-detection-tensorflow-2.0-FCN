@@ -79,7 +79,7 @@ Epoch 00060: saving model to FCN2s.h5
 ```
 The model is saved as `FCN[n]s.h5` in the root folder, where `n = FCN_TYPE` 
 
-### Trace your training progress by Tensorboard
+### Trace your training progress with Tensorboard
 `train.py` sets updating frequency of Tensorboard's callback as 30 steps, you can adjust it as you want by modifying below code.  Note that the more frequent the callback is triggered, the slower training rate you get.
 ```python3
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, 

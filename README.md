@@ -20,8 +20,8 @@ $ pip3 install -r ./packages/requirements.txt
 │   └── FCN_500_refine_txx              # 2-D txt labels, it's ok to rename the folder as you wish, remember to modify the data path in config.py
 ├── validation_data                     # input images for evaluation
 ├── validation_result                   # evaluation result
-├── log
-│   └── fits                            # tensorbaord logs directory
+├── logs
+│   └── fit                             # tensorbaord logs directory
 ├── packages
 │   └── requirements.txt
 ├── config.py
@@ -78,6 +78,19 @@ Epoch 00060: saving model to FCN2s.h5
 
 ```
 The model is saved as `FCN[n]s.h5` in the root folder, where `n = FCN_TYPE` 
+
+### Trace your training by Tensorboard
+`train.py` sets updating frequency of Tensorboard's callback as 30 steps, you can adjust it as you want by modifying below code.  Note that the more frequent the callback is triggered, the slower training rate you get.
+```python3
+tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, 
+                                                      histogram_freq=1, 
+                                                      update_freq = 30)
+```
+In the root directory, type below comments in terminal to activate tensorboard
+```bash
+$ tensorboard --logdir="./logs/fit"
+```
+Lauch a browser and type `http://localhost:6006/` in URL and check the result
 
 ## Evaluate your own model
 ### Setup configuration

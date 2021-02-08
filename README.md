@@ -90,7 +90,7 @@ In the root directory, type below comments in terminal to activate tensorboard
 ```bash
 $ tensorboard --logdir="./logs/fit"
 ```
-Lauch a browser and type `http://localhost:6006/` in URL, then check the visulaized trainging process
+Lauch a browser and type `http://localhost:6006/` in URL, then check the visulaized trainging progress
 ![image](https://github.com/ylin1992/Tensorflow-2.0-FCN/blob/main/packages/tensorboard.png)
 ## Evaluate your own model
 ### Setup configuration

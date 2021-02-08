@@ -88,7 +88,7 @@ _CFG.EVAL.FIRST_LAYER_SIZE    = 320
 _CFG.EVAL.FCN_TYPE            = 2             # FCN_TYPE has to be set as 2, 4, or 8 and should be the same as configuration for training
 _CFG.EVAL.N_CLASSES           = 2 
 _CFG.EVAL.THRESHOLD           = 0.5
-_CFG.EVAL.MAX_BATCH_SIZE      = 2             # in validation.py, an input image is segmantized into small fragments and zipped into batch
+_CFG.EVAL.MAX_BATCH_SIZE      = 2             # in validation.py, an input image is sliced into small fragments and zipped into batch
                                               # adjust this parameter based on your GPU RAM
                                               # i.e., I used GTX1660 Ti, 6GB GRAM, FCN2s with first layer = (224,224,3), this parameter
                                               # can be up to 20

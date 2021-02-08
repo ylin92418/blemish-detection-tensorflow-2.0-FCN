@@ -10,8 +10,30 @@ from keras.models import Model
 from keras.layers import Conv2D, Conv2DTranspose, Input, add, Dropout, Reshape, Activation
 
 
-def VGG_16_Loader(nClasses, input_height, input_width):
+def FCN(nClasses, input_height, input_width, FCN_stage = 2):
+    '''
+    An augmentation of fine-features learning model,
+    generating fcn2s, fcn4s and fcn8s by declaring FCN_stage
 
+    Parameters
+    ----------
+    nClasses : number of classes
+
+    input_height : int
+        image height of first layer of VGG-16.
+    input_width : int
+        image width of first layer of VGG-16.
+    FCN_stage : FCN stage number, optional
+        declare the number of fcn net. The default is 2.
+
+    Returns
+    -------
+    fcn_model : Keras.model
+        output model.
+
+    '''
+    
+    assert FCN_stage == 2 or FCN_stage == 4 or FCN_stage == 8
     assert input_height % 32 == 0
     assert input_width % 32 == 0
 
@@ -23,8 +45,6 @@ def VGG_16_Loader(nClasses, input_height, input_width):
                         pooling=None,
                         classes=1000)
     
-    #print(model.summary())
-    #print(len(model.layers))
     assert isinstance(model, Model)
 
     vgg_out = Conv2D(filters=4096, kernel_size=(7,7), padding="same",
@@ -43,36 +63,8 @@ def VGG_16_Loader(nClasses, input_height, input_width):
     vgg_out = Conv2DTranspose(filters=nClasses, kernel_size=(2, 2), strides=(2, 2), padding="valid", 
                               activation=None,name="score2")(vgg_out)
 
-    fcn8s = Model(inputs=img_input, outputs=vgg_out)
-    return fcn8s
-
-
-def FCN(nClasses, input_height, input_width, FCN_stage = 2):
-    '''
-    An augmentation of fine-features learning model,
-    generating fcn2s, fcn4s and fcn8s by declaring FCN_stage
-
-    Parameters
-    ----------
-    nClasses : number of classes
-
-    input_height : int
-        image height of first layer for VGG-16.
-    input_width : int
-        image width of first layer for VGG-16..
-    FCN_stage : FCN stage number, optional
-        declare the number of fcn net. The default is 2.
-
-    Returns
-    -------
-    fcn_model : Keras.model
-        output model.
-
-    '''
+    fcn8 = Model(inputs=img_input, outputs=vgg_out)
     
-    assert FCN_stage == 2 or FCN_stage == 4 or FCN_stage == 8
-    
-    fcn8 = VGG_16_Loader(nClasses, input_height, input_width)
 
     skip_con1 = Conv2D(nClasses, kernel_size=(1, 1), padding="same", activation=None, kernel_initializer="he_normal",
                        name="score_pool4")(fcn8.get_layer("block4_pool").output)

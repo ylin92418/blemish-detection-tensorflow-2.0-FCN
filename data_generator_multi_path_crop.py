@@ -198,8 +198,8 @@ class Generator(tf.keras.utils.Sequence):
 
     def batch_image(self, image_group, label_group):
         # get the max image shape
-        max_shape = tuple(max(image.shape[x] for image in image_group) for x in range(3))
-        max_shape_label = tuple(max(label.shape for label in label_group))
+        max_shape = [max(image.shape[x] for image in image_group) for x in range(3)]
+        max_shape_label = [max(label.shape for label in label_group)]
         
         image_batch = np.zeros((self.batch_size,) + max_shape, dtype='float32') 
         label_batch = np.zeros((self.batch_size,) + max_shape_label, dtype='float32')

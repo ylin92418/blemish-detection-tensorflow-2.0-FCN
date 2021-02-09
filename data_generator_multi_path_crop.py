@@ -236,8 +236,8 @@ if __name__ == "__main__":
                                 ['./dataset/FCN_500_refine_txt', './dataset/FCN_refine_txt'],
                                 BATCH_SIZE=batch, 
                                 n_class=2, 
-                                image_size = image_size,
-                                crop = False)
+                                image_size=image_size,
+                                crop=False)
     print(len(train_generator))
     image_batch, label_group = train_generator.__getitem__(20)
     print(image_batch.shape)

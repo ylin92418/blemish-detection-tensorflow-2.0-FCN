@@ -203,7 +203,7 @@ class Generator(tf.keras.utils.Sequence):
         
         image_batch = np.zeros((self.batch_size,) + max_shape, dtype='float32') 
         label_batch = np.zeros((self.batch_size,) + max_shape_label, dtype='float32')
-        # copy all images to the upper left part of the image batch object
+
         for image_index, image in enumerate(image_group):
             image_batch[image_index, :image.shape[0], :image.shape[1], :image.shape[2]] = image
             label_batch[image_index, :label_group[image_index].shape[0], :label_group[image_index].shape[1]] = label_group[image_index]

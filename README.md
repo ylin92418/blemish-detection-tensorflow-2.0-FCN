@@ -61,7 +61,7 @@ _CFG.TRAIN.LABELSET           = ['./dataset/FCN_500_refine_txt']
 Please refer to `./dataset` for details on how to setup your own dataset
 
 #### Start your own training set
-simply input below comment in the directory
+simply input below command in the directory
 ```bash
 $ python3 train.py
 
@@ -86,7 +86,7 @@ tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir,
                                                       histogram_freq=1, 
                                                       update_freq = 30)
 ```
-In the root directory, type below comments in terminal to activate tensorboard
+In the root directory, activate tensorboard by below command
 ```bash
 $ tensorboard --logdir="./logs/fit"
 ```
@@ -109,7 +109,7 @@ _CFG.EVAL.MAX_BATCH_SIZE      = 2             # in validation.py, an input image
                                               # can be up to 20
 ```
 ### Evaluate the model
-Put your data in `./validation_data` and evaluate the result by typing the comment as follows
+Put your data in `./validation_data` and evaluate the result by typing the command as follows
 ```bash
 $ python3 validation.py
 ```

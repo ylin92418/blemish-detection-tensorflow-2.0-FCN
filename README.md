@@ -96,7 +96,7 @@ Lauch a browser and type `http://localhost:6006/` in URL, then check the visuali
 ### Setup configuration
 Specify your own data set and training paramenter in ```config.py```
 ```python3
-_CFG.EVAL.USE_CPU             = True          # if you want to evaluate result in the middle of training process, set this parameter as True.
+_CFG.EVAL.USE_CPU             = True          # if you want to evaluate tentative result in midst of the training process, set this parameter as True.
                                               # otherwise, set this value as False to use GPU instead
 _CFG.EVAL.INPUT_SIZE          = 320
 _CFG.EVAL.FIRST_LAYER_SIZE    = 320
